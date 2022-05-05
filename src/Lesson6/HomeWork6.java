@@ -11,7 +11,7 @@ public class HomeWork6 {
             String[] variant = {"Ванкувер", "Торонто", "Оттава", "Монреаль", "Атлантический океан", "Тихий океан", "Южный океан", "Северный Ледовитый океан"};
             for (int j = i * 4; j < i * 4 + 4; j++) {
                     int q=j+1;
-                    if(q>=4){q=1+j-4;}
+                    if(j>=4){q=1+j-4;}
                     System.out.println(q + " " + variant[j]);
             }
             int[] answer = {3, 3};
