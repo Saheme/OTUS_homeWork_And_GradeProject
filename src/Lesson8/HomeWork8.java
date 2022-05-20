@@ -27,33 +27,33 @@ public class HomeWork8 {
 
         Question[] arrayQuest = {q1, q2, q3, q4};
 
-            int countRightAnswer = 0;
-            int countWrongAnswer = 0;
+        int countRightAnswer = 0;
+        int countWrongAnswer = 0;
 
-        for (int i = 0; i < arrayQuest.length; i++) {
+        for (Question question : arrayQuest) {
 
-            System.out.println(arrayQuest[i].quest);
+            System.out.println(question.quest);
 
-            for (int j = 0; j < arrayQuest[i].variant.length; j++) {
+            for (int j = 0; j < question.variant.length; j++) {
                 int q = j + 1;
-                System.out.println(q + " " + arrayQuest[i].variant[j]);
+                System.out.println(q + " " + question.variant[j]);
             }
 
 
             Scanner scan = new Scanner(System.in);
             int input = scan.nextInt();
-            if (input == arrayQuest[i].right) {
+            question.right = input;
+            if (input == question.right) {
                 System.out.println("Вы абсолютно правы! ");
                 countRightAnswer++;
-            }
-            else {
+            } else {
                 System.out.println("Неправильно. ");
                 countWrongAnswer++;
-        }
             }
-            System.out.println();
-            System.out.println("Правильных ответов " + countRightAnswer);
-            System.out.println("Неправильных ответов " + countWrongAnswer);
+        }
+        System.out.println();
+        System.out.println("Правильных ответов " + countRightAnswer);
+        System.out.println("Неправильных ответов " + countWrongAnswer);
 
     }
 }
