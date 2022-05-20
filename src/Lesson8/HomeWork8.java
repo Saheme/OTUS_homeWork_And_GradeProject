@@ -42,7 +42,6 @@ public class HomeWork8 {
 
             Scanner scan = new Scanner(System.in);
             int input = scan.nextInt();
-            question.right = input;
             if (input == question.right) {
                 System.out.println("Вы абсолютно правы! ");
                 countRightAnswer++;

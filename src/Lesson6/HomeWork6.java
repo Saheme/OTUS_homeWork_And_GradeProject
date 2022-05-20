@@ -8,6 +8,8 @@ public class HomeWork6 {
         int wrongAnswer = 0;
         String[] question = {"Столица Канады", "С каким океаном не граничит Канада",
                 "Самая длинная река Канады", "Самая высокая гора в Канаде"};
+
+
         for (int i = 0; i < question.length; i++) {
             System.out.println(question[i]);
             String[][] variant = {{"Ванкувер", "Торонто", "Оттава", "Монреаль"},
