@@ -15,18 +15,19 @@ public class HomeWork8 {
         int countRightAnswer = 0;
         int countWrongAnswer = 0;
 
+
         for (int i = 0; i < arrayQuest.length; i++) {
 
-            System.out.println(arrayQuest[i].quest);
+            System.out.println(arrayQuest[i].getQuest());
 
-            for (int j = 0; j < arrayQuest[i].variant.length; j++) {
+            for (int j = 0; j < arrayQuest[i].getVariant().length; j++) {
                 int q = j + 1;
-                System.out.println(q + " " + arrayQuest[i].variant[j]);
+                System.out.println(q + " " + arrayQuest[i].getVariant()[j]);
             }
 
             Scanner scan = new Scanner(System.in);
             int input = scan.nextInt();
-            if (input == arrayQuest[i].right) {
+            if (input == arrayQuest[i].getRight()) {
                 System.out.println("Вы абсолютно правы! ");
                 countRightAnswer++;
             } else {
