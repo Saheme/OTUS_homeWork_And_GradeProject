@@ -7,8 +7,11 @@ public class ArrayTest {
         Numbers array1 = new Numbers(new int[10]);
         for (int i = 0; i <array1.array.length; i++){
             array1.array[i] =(int)(Math.random() * 10);
-            System.out.print(array1.array[i] + " ");
         }
+            System.out.print(Arrays.toString(array1.array));
+
+
+
         System.out.println();
         Arrays.sort(array1.array);
         System.out.println(Arrays.toString(array1.array));
