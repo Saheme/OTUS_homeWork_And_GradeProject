@@ -9,7 +9,6 @@ public class Question {
     }
 
 
-
     Question(String quest, String[] variant, int right) {
         this.quest = quest;
         this.variant = variant;
@@ -20,7 +19,7 @@ public class Question {
         this.quest = quest;
          this.variant = variant;
          this.right = right; */
-   public void setQuest(String quest) {
+    public void setQuest(String quest) {
         this.quest = quest;
     }
 
