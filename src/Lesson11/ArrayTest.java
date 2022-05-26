@@ -11,9 +11,12 @@ public class ArrayTest {
         System.out.print("Изначальный массив" + " " + Arrays.toString(array1.array));
 
         System.out.println();
+        long start = System.nanoTime();
 
         Arrays.sort(array1.array);
+        long stop = System.nanoTime();
         System.out.println("Стандартная сортировка Java" + " " + Arrays.toString(array1.array));
+        System.out.println(stop - start);
 
         System.out.println();
         Numbers array2 = new Numbers(new int[10]);
@@ -22,6 +25,7 @@ public class ArrayTest {
         }
         System.out.print("Изначальный массив" + " " + Arrays.toString(array2.array));
         System.out.println();
+        long start2 = System.nanoTime();
         int bufer;
         boolean statusSort = false;
         while (!statusSort) {
@@ -37,6 +41,8 @@ public class ArrayTest {
             }
             System.out.println("Пузырьковая сортировка " + " " + Arrays.toString(array2.array));
         }
+            long stop2 = System.nanoTime();
+            System.out.println(stop2 - start2);
 
 
     }
