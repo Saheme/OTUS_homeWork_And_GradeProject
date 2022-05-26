@@ -23,7 +23,7 @@ public class ArrayTest {
         Collections.sort(array1);
         long stop = System.nanoTime();
         System.out.println("Стандартная сортировка Java" + " " +  array1);
-        System.out.println(stop - start);
+        System.out.println((stop - start)/1000 + " " + "микросекунд");
 
         List<Integer> array2 = new ArrayList<>(10);
         array2.add(3);
@@ -55,7 +55,7 @@ public class ArrayTest {
             System.out.println("Пузырьковая сортировка " + " " + array2);
         }
         long stop2 = System.nanoTime();
-        System.out.println(stop2 - start2);
+        System.out.println((stop2 - start2) /1000 + " " + "микросекунд");
 
 
 
