@@ -6,19 +6,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static jdk.internal.net.http.common.Utils.close;
+
+
 public class ExceptionExample {
     public static void main(String[] args) throws IOException {
         try {
 
             unsafe(10);
         } catch (Exception e) {
-             e.printStackTrace();
+            e.printStackTrace();
             System.out.println("число не в заданном диапазоне" + " " + e.getMessage());
         }
 
 
         newFileWriting("MyFile.txt", "Мама мыла раму\n пока\n Папа пил виски");
         newFileReading("MyFile.txt");
+        newFileReadingUsual("MyFile.txt");
 
     }
 
@@ -36,6 +40,7 @@ public class ExceptionExample {
             throw new RuntimeException(exception);
         }
     }
+
     public static void newFileWriting(String fileName, String value) {
         try (FileWriter fw = new FileWriter(fileName)) {
             fw.write(value);
@@ -43,6 +48,7 @@ public class ExceptionExample {
             exception.printStackTrace();
         }
     }
+
     public static void newFileReading(String fileName) {
         try (FileReader fr = new FileReader(fileName)) {
 
@@ -54,6 +60,24 @@ public class ExceptionExample {
             }
         } catch (IOException exception) {
             exception.printStackTrace();
+        }
+    }
+
+    public static void newFileReadingUsual(String fileName) {
+        try{
+            FileReader fr = new FileReader(fileName);
+
+            Scanner scanner = new Scanner(fr);
+            int i = 0;
+            while (scanner.hasNextLine()) {
+                System.out.println(scanner.nextLine());
+                i++;
+            }
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        } finally {
+
+            close();
         }
     }
 }
