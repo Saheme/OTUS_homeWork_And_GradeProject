@@ -11,7 +11,7 @@ import static jdk.internal.net.http.common.Utils.close;
 
 public class ExceptionExample {
     public static void main(String[] args) throws IOException {
-        try {
+       try {
 
             unsafe(10);
         } catch (Exception e) {
@@ -64,23 +64,28 @@ public class ExceptionExample {
     }
 
     public static void newFileReadingUsual(String fileName) {
-        try{
-            FileReader fr = new FileReader(fileName);
-
+        FileReader fr = null;
+        try {
+            fr = new FileReader(fileName);
             Scanner scanner = new Scanner(fr);
-            int i = 0;
             while (scanner.hasNextLine()) {
                 System.out.println(scanner.nextLine());
-                i++;
             }
         } catch (IOException exception) {
-            exception.printStackTrace();
+            System.out.println(exception.getMessage());
+            ;
         } finally {
-
-            close();
+            try {
+                if (fr != null) {
+                    fr.close();
+                }
+            } catch (IOException exception) {
+                System.out.println(exception.getMessage());
+            }
         }
     }
 }
+
 
 
 
