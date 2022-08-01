@@ -19,8 +19,8 @@ public class Question {
         this.quest = quest;
          this.variant = variant;
          this.right = right; */
-    public void setQuest(String quest) {
-        this.quest = quest;
+    public void printWinner() {
+        System.out.println(quest);
     }
 
     public void setVariant(String[] variant) {

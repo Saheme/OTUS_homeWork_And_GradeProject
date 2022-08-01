@@ -1,9 +1,9 @@
 package lesson16.homework.src.main.java.ru.otus;
 
 
-import com.sun.nio.sctp.Association;
-
-import java.util.Random;
+import lesson16.homework.src.main.java.ru.otus.game.*;
+import lesson16.homework.src.main.java.ru.otus.game.metod.NewRoll;
+import lesson16.homework.src.main.java.ru.otus.game.metod.newGameWinnerConsolePrinter;
 
 public class HomeWork {
 
@@ -19,33 +19,21 @@ public class HomeWork {
      */
     public static void main(String[] args) {
 
-          rollTest();
-        rollLessNull();
+        playGameLogicTest();
+        // rollTest();
 
-    }
-
-    public static void rollLessNull() {
-        try {
-            int a = 0;
-            int b = new Random().nextInt();
-            if (b > a) {
-                System.out.println("b= "+ b + "\t "+ "a= " + a);
-                System.out.println("Тест прошел Число больше " );
-            } else {
-                throw new Exception();
-            }
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            System.out.println("Все упало, меньше 0!!!");
         }
-    }
+
+
+
 
     public static void rollTest() {
         try {
             int a = 0;
-            int b = new Random().nextInt();
-            if (b == a||b<=6) {
-                System.out.println(b + " " + a);
+            int c = 6;
+            int b = new DiceImpl().roll();
+            if (b > a && b <= c) {
+                System.out.println("b = " + b + "\t " + "a = " + a);
                 System.out.println("Тест прошел");
             } else {
                 throw new Exception();
@@ -57,7 +45,18 @@ public class HomeWork {
     }
 
 
+    public static void playGameLogicTest() { Player name1 = new Player("Вася");
+
+        new Game(new NewRoll(), new newGameWinnerConsolePrinter(name1)).playGame(name1, new Player("Игорь"));
+
+
+
+
+    }
 }
+
+
+
 
 
 
