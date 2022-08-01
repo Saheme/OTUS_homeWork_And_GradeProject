@@ -14,13 +14,7 @@ public class newGameWinnerConsolePrinter implements GameWinnerPrinter {
 
     @Override
     public void printWinner(Player winner){
-
-        //this.winner = winner;
-
-       // NewRoll.count = 6;
-
-
-        try{
+      try{
             if(this.winner == winner){
 
                 System.out.println("Метод работает правильно");
