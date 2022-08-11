@@ -2,7 +2,7 @@ package lesson16.homework.src.main.java.ru.otus.game;
 
 import java.util.Random;
 
-public class DiceImpl implements Dice {             //реализ. метод roll из interface
+public class DiceImpl implements Dice {
     @Override
     public int roll() {
         // https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
