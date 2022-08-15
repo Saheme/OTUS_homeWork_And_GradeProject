@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Objects;
 
+import static java.lang.System.out;
+
 public class HomeWork {
 
     /*
@@ -37,14 +39,14 @@ public class HomeWork {
             int c = 6;
             int b = new DiceImpl().roll();
             if (b > a && b <= c) {
-                System.out.println("b = " + b + "\t " + "a = " + a);
-                System.out.println("Тест прошел");
+                out.println("b = " + b + "\t " + "a = " + a);
+                out.println("Тест прошел");
             } else {
                 throw new Exception();
             }
         } catch (Exception exception) {
             exception.printStackTrace();
-            System.out.println("Все упало!!! Число не в диапазоне от 0 до 6");
+            out.println("Все упало!!! Число не в диапазоне от 0 до 6");
         }
     }
 
@@ -57,39 +59,52 @@ public class HomeWork {
     }
 
     public static void outputTest() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); //Создаем динамический массив где будем хранить то что вывод на консоль
-        PrintStream stream = new PrintStream(outputStream); //   Создаем Дашу
-        Player name1 = new Player("Вася");
-        new Game(new NewRoll(), new GameWinnerConsolePrinter()).playGame(name1, new Player("Игорь")); //передаем лопату и вызываем Колю
-        System.setOut(stream); //задаем копать Даше
-
-        PrintStream temp = System.out;
-
-         stream = temp;
-
-
-         // String result = outputStream.toString(); //Преобразовываем данные из массива ByteArray в строку
-
-
-/*
-        try
-        { if (result == temp) {
-            System.out.println("Тест прошел");
-        }else {
-            throw new IOException();
-        }
+        try {
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            PrintStream stream = new PrintStream(outputStream);
+            new Game(new NewRoll(), new GameWinnerConsolePrinter()).playGame(new Player("Вася"), new Player("Игорь"));
+            PrintStream old = out;
+            System.setOut(stream);
+            String actual = outputStream.toString(); //Преобразовываем данные из массива ByteArray в строку
+            out.flush();
+            System.setOut(old);
+            String expected = "Победитель: Вася";
+            out.println(actual + expected);
+            if (actual == expected) {
+                out.println("Тест прошел");
+            } else {
+                throw new IOException();
+            }
         } catch (IOException exception) {
             exception.printStackTrace();
-            System.out.println("Поток выводит не то что надо");
-
-
+            out.println("Поток выводит не то что надо");
         }
-    */
     }
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); //Создаем динамический массив где будем хранить то что вывод на консоль
+        PrintStream stream = new PrintStream(outputStream); //   Создаем Дашу
+        Player name1 = new Player("Вася");
+        new Game(new NewRoll(), new GameWinnerConsolePrinter()).playGame(name1, new Player("Игорь")); //передаем лопату и вызываем Колю
+        System.setOut(stream); //задаем копать Даше
+        PrintStream temp = System.out;*/
 
 
 
