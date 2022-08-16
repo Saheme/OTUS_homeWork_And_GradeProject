@@ -1,6 +1,6 @@
 package lesson12;
 
-import javax.swing.border.EmptyBorder;
+
 import java.util.*;
 
 public class bank {
@@ -19,11 +19,11 @@ public class bank {
             }
         System.out.println();
 
-        Client findClient = findClient(exz, new Account(589321, 10));
+        Client findClient = findClient(exz, new Account(698213, 10));
         if (findClient != null) {
             System.out.println(findClient.name + " " + findClient.dateOfBirth);
         } else {
-            notPerson();
+
         }
 
 
@@ -33,7 +33,6 @@ public class bank {
 
 
     }
-
     static List<Account> getAccounts(Map<Client, List<Account>> exz, Client persons) {
 
         return exz.get(persons);
