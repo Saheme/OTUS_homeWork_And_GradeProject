@@ -27,8 +27,8 @@ public class HomeWork {
     public static void main(String[] args) {
 
         outputTest();
-        //playGameLogicTest();
-        // rollTest();
+        playGameLogicTest();
+         rollTest();
 
     }
 
@@ -60,17 +60,18 @@ public class HomeWork {
 
     public static void outputTest() {
         try {
+            PrintStream old = System.out;
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             PrintStream stream = new PrintStream(outputStream);
-            new Game(new NewRoll(), new GameWinnerConsolePrinter()).playGame(new Player("Вася"), new Player("Игорь"));
-            PrintStream old = out;
             System.setOut(stream);
+            new Game(new NewRoll(), new GameWinnerConsolePrinter()).playGame(new Player("Вася"), new Player("Игорь"));
+
             String actual = outputStream.toString(); //Преобразовываем данные из массива ByteArray в строку
-            out.flush();
+
             System.setOut(old);
-            String expected = "Победитель: Вася";
+            String expected = "Победитель: Вася\r\n";
             out.println(actual + expected);
-            if (actual == expected) {
+            if (Objects.equals(actual, expected)) {
                 out.println("Тест прошел");
             } else {
                 throw new IOException();
@@ -91,8 +92,8 @@ public class HomeWork {
 
 
 
-
-
+//PrintStream old = out;
+//System.setOut(old);
 
 
 
