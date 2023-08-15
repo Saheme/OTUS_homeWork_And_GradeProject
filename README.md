@@ -1,6 +1,7 @@
 # OTUS_homeWork_And_GradeProject
 All my homeWorks and My Grade project(OTUS)
-В папках lesson6 -lesson16, находятся домашние задания. В папке gradeProject находится мой выпускной проект
+В папках lesson6 -lesson16, находятся домашние задания. В папке gradeProject находится мой выпускной проект.
+
 Задание на проект:
 
 Цена прописью.
