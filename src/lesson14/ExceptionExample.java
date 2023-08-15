@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static jdk.internal.net.http.common.Utils.close;
+
 
 
 public class ExceptionExample {

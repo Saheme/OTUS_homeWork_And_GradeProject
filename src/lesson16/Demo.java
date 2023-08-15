@@ -1,6 +1,6 @@
-package lesson16.homework.src.main.java.ru.otus;
+package lesson16;
 
-import lesson16.homework.src.main.java.ru.otus.game.*;
+import lesson16.game.*;
 
 public class Demo {
 

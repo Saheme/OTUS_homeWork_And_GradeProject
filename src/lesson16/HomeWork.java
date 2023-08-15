@@ -1,9 +1,12 @@
-package lesson16.homework.src.main.java.ru.otus;
+package lesson16;
 
 
-import lesson16.homework.src.main.java.ru.otus.game.*;
-import lesson16.homework.src.main.java.ru.otus.game.metod.NewRoll;
-import lesson16.homework.src.main.java.ru.otus.game.metod.newGameWinnerConsolePrinter;
+import lesson16.game.DiceImpl;
+import lesson16.game.Game;
+import lesson16.game.GameWinnerConsolePrinter;
+import lesson16.game.Player;
+import lesson16.game.metod.NewRoll;
+import lesson16.game.metod.newGameWinnerConsolePrinter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

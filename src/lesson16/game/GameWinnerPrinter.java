@@ -1,4 +1,4 @@
-package lesson16.homework.src.main.java.ru.otus.game;
+package lesson16.game;
 
 public interface GameWinnerPrinter {
     void printWinner(Player winner);

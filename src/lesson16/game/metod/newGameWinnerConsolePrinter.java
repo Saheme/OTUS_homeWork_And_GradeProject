@@ -1,7 +1,7 @@
-package lesson16.homework.src.main.java.ru.otus.game.metod;
+package lesson16.game.metod;
 
-import lesson16.homework.src.main.java.ru.otus.game.GameWinnerPrinter;
-import lesson16.homework.src.main.java.ru.otus.game.Player;
+import lesson16.game.GameWinnerPrinter;
+import lesson16.game.Player;
 
 public class newGameWinnerConsolePrinter implements GameWinnerPrinter {
 

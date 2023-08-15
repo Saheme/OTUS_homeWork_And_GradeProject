@@ -1,6 +1,6 @@
-package lesson16.homework.src.main.java.ru.otus.game.metod;
+package lesson16.game.metod;
 
-import lesson16.homework.src.main.java.ru.otus.game.Dice;
+import lesson16.game.Dice;
 
 public class NewRoll implements Dice {
     int count = 1;

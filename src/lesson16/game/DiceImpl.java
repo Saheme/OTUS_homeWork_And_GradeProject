@@ -1,4 +1,4 @@
-package lesson16.homework.src.main.java.ru.otus.game;
+package lesson16.game;
 
 import java.util.Random;
 
